@@ -1,0 +1,113 @@
+# Flutter/Dart/Pub related
+.dart_tool/
+.packages
+.pub-cache/
+build/
+.flutter-plugins
+.flutter-plugins-dependencies
+.flutter-versions
+.flutter-plugins
+.flutter-plugins-dependencies
+.melos_tool/
+.melos_workspace/
+generated_plugin_registrant.dart
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+*.swp
+
+# VS Code related
+.vscode/
+.history/
+
+# Android related
+android/.gradle/
+android/app/build/
+android/local.properties
+android/.idea/
+android/.settings/
+android/.cxx/
+android/.externalNativeBuild/
+android/.DS_Store
+
+# iOS/Xcode related
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/Flutter/Generated.xcconfig
+ios/Flutter/ephemeral/
+ios/Pods/
+ios/Runner.xcworkspace/
+ios/build/
+ios/.symlinks/
+ios/.DS_Store
+ios/.dart_tool/
+ios/Podfile.lock
+
+# macOS related
+macos/Flutter/ephemeral/
+macos/Pods/
+macos/build/
+macos/.DS_Store
+macos/.dart_tool/
+macos/Podfile.lock
+
+# Web related
+web/.dart_tool/
+web/build/
+
+# Windows related
+windows/Flutter/ephemeral/
+windows/build/
+windows/.dart_tool/
+
+# Linux related
+linux/Flutter/ephemeral/
+linux/build/
+linux/.dart_tool/
+
+# Coverage
+coverage/
+*.lcov
+
+# Others
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*.orig
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Firebase
+firebase_app_id_file.json
+
+# Symbolication
+app.*.symbols
+
+# Misc
+.DS_Store
+*.class
+*.lock
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.sqlite
+*.sublime-workspace
+*.sublime-project
+*.jks
+*.keystore
+*.pem
+*.p12
+*.crt
+*.key
