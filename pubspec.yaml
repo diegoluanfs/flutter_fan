@@ -37,6 +37,7 @@ dependencies:
   flutter_screenutil: ^5.9.3
   flutter_svg: ^2.0.10
   just_audio: ^0.9.36
+  day_night_switcher: ^0.2.0
 
 dev_dependencies:
   flutter_test:

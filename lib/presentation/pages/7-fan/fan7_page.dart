@@ -5,14 +5,14 @@ import 'package:just_audio/just_audio.dart';
 import 'package:day_night_switcher/day_night_switcher.dart';
 import 'package:flutter_fan/app.dart';
 
-class Fan3Page extends StatefulWidget {
-  const Fan3Page({super.key});
+class Fan7Page extends StatefulWidget {
+  const Fan7Page({super.key});
 
   @override
-  State<Fan3Page> createState() => _Fan3PageState();
+  State<Fan7Page> createState() => _Fan7PageState();
 }
 
-class _Fan3PageState extends State<Fan3Page>
+class _Fan7PageState extends State<Fan7Page>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late AudioPlayer _audioPlayer;
@@ -37,7 +37,7 @@ class _Fan3PageState extends State<Fan3Page>
   }
 
   Future<void> _setupAudio() async {
-    await _audioPlayer.setAsset('assets/sounds/3-fan.mp3');
+    await _audioPlayer.setAsset('assets/sounds/2-fan.mp3');
     await _audioPlayer.setLoopMode(LoopMode.one);
     await _audioPlayer.setSpeed(_speed);
     _controller.repeat();
@@ -80,7 +80,7 @@ class _Fan3PageState extends State<Fan3Page>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Fan 3'),
+        title: const Text('Fan 7'),
         actions: [
           DayNightSwitcherIcon(
             isDarkModeEnabled: themeNotifier.value == ThemeMode.dark,
@@ -106,7 +106,7 @@ class _Fan3PageState extends State<Fan3Page>
                     RotationTransition(
                       turns: _controller,
                       child: SvgPicture.asset(
-                        'assets/imagens/3-fan.svg',
+                        'assets/imagens/7-fan.svg',
                         width: MediaQuery.of(context).size.width * 0.8,
                         height: MediaQuery.of(context).size.width * 0.8,
                         fit: BoxFit.contain,

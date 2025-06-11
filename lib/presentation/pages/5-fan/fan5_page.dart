@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_fan/presentation/widgets/app_template.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:just_audio/just_audio.dart';
+import 'package:day_night_switcher/day_night_switcher.dart';
+import 'package:flutter_fan/app.dart';
 
 class Fan5Page extends StatefulWidget {
   const Fan5Page({super.key});
@@ -76,47 +78,62 @@ class _Fan5PageState extends State<Fan5Page>
 
   @override
   Widget build(BuildContext context) {
-    return AppTemplate(
-      child: GestureDetector(
-        onTap: _toggleSpin,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const SizedBox(height: 32),
-            Expanded(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  RotationTransition(
-                    turns: _controller,
-                    child: SvgPicture.asset(
-                      'assets/imagens/5-fan.svg',
-                      width: 100,
-                      height: 100,
-                      fit: BoxFit.contain,
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Fan 5'),
+        actions: [
+          DayNightSwitcherIcon(
+            isDarkModeEnabled: themeNotifier.value == ThemeMode.dark,
+            onStateChanged: (isDarkModeEnabled) {
+              themeNotifier.value =
+                  isDarkModeEnabled ? ThemeMode.dark : ThemeMode.light;
+            },
+          ),
+          const SizedBox(width: 24),
+        ],
+      ),
+      body: AppTemplate(
+        child: GestureDetector(
+          onTap: _toggleSpin,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const SizedBox(height: 32),
+              Expanded(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    RotationTransition(
+                      turns: _controller,
+                      child: SvgPicture.asset(
+                        'assets/imagens/5-fan.svg',
+                        width: MediaQuery.of(context).size.width * 0.8,
+                        height: MediaQuery.of(context).size.width * 0.8,
+                        fit: BoxFit.contain,
+                      ),
                     ),
+                  ],
+                ),
+              ),
+              Column(
+                children: [
+                  Text(
+                    'Velocidade: ${_speed.toStringAsFixed(1)}x',
+                    style: const TextStyle(fontSize: 18),
                   ),
+                  Slider(
+                    value: _speed,
+                    min: 1.0,
+                    max: 3.0,
+                    divisions: 14,
+                    label: '${_speed.toStringAsFixed(1)}x',
+                    onChanged: (value) => _onSpeedChanged(value),
+                  ),
+                  const SizedBox(height: 24),
                 ],
               ),
-            ),
-            Column(
-              children: [
-                Text(
-                  'Velocidade: ${_speed.toStringAsFixed(1)}x',
-                  style: const TextStyle(fontSize: 18),
-                ),
-                Slider(
-                  value: _speed,
-                  min: 1.0,
-                  max: 3.0,
-                  divisions: 14,
-                  label: '${_speed.toStringAsFixed(1)}x',
-                  onChanged: (value) => _onSpeedChanged(value),
-                ),
-                const SizedBox(height: 24),
-              ],
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
